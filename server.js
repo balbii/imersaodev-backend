@@ -1,36 +1,11 @@
 import express from "express";
+import routes from "./src/routes/postsRoutes.js";
 
-const posts = [
-    {
-        id: 1,
-        descricao: "Uma linda paisagem",
-        imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-        id: 2,
-        descricao: "Um delicioso prato",
-        imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-        id: 3,
-        descricao: "Um animal fofo",
-        imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-        id: 4,
-        descricao: "Uma cidade vibrante",
-        imagem: "https://placecats.com/millie/300/150"
-    },
-    {
-        id: 5,
-        descricao: "Um objeto de arte",
-        imagem: "https://placecats.com/millie/300/150"
-    }
-];
-
+// Cria uma instância do framework Express, que será o núcleo da nossa aplicação.
 const app = express();
-app.use(express.json());
+routes(app);
 
+// Inicia o servidor Express na porta 3000 e exibe uma mensagem no console.
 app.listen(3000, () => {
     console.log("Servidor escutando");
 });
